@@ -37,6 +37,8 @@ danceSteps.addEventListener('click', () => {
     getLockingSteps().then(data => console.log(data))
     getHiphopSteps().then(data => console.log(data))
     getPoppingSteps().then(data => console.log(data))
+        // by changing one of the json paths we can check if catch error works
+    .catch(err => console.log("error", err))
 })
 
 getPersons.addEventListener('click', () => {
