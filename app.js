@@ -4,25 +4,9 @@ const getPersons = document.querySelector('.randomBtn')
 
 
 
-// using FETCH API instead of XML
-
-const getSteps = () => {
-
-    fetch('dancesteps/lockingsteps.json')
-        .then((res) => {
-            console.log(res)
-            return res.json()
-        }).then(data => {
-            console.log(data)
-            console.log(data[0])
-        })
-        .catch(() => {
-        console.log('error', err)
-    })
-}
 
 // buttons to get data
-danceSteps.addEventListener('click', getSteps())
+danceSteps.addEventListener('click', () => {console.log('btn works')})
 
 getPersons.addEventListener('click', () => {
     console.log('Person button works')
@@ -49,6 +33,26 @@ fetch('https://randomuser.me/api/')
 
 
 // ================================== REQUEST TESTS ======================= ///
+
+// === USING FETCH ============== //
+
+
+// using FETCH API instead of XML
+/* 
+const getSteps = () => {
+
+    fetch('dancesteps/lockingsteps.json')
+        .then((res) => {
+            console.log(res)
+            return res.json()
+        }).then(data => {
+            console.log(data)
+            console.log(data[0])
+        })
+        .catch(() => {
+        console.log('error', err)
+    })
+} */
 
 //getting request with XML getting request from JSON file
 /* 
