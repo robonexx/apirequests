@@ -3,10 +3,41 @@ const getPersons = document.querySelector('.randomBtn')
 
 
 
+// async await
+// making multiple functions to call data from json file folder
+// attaching the functions to a button
+// an async function is non blocking
+
+const getLockingSteps = async () => {
+    const res = await fetch('dancesteps/lockingsteps.json')
+    const data = await res.json()
+
+    return data 
+}
+const getPoppingSteps = async () => {
+    const res = await fetch('dancesteps/poppingsteps.json')
+    const data = await res.json()
+
+    return data 
+}
+const getHiphopSteps = async () => {
+    const res = await fetch('dancesteps/hiphopsteps.json')
+    const data = await res.json()
+
+    return data 
+}
+
+// need to the promise and resolve the data
 
 
 // buttons to get data
-danceSteps.addEventListener('click', () => {console.log('btn works')})
+// not optimal way to do it but i wanted to try :)
+danceSteps.addEventListener('click', () => {
+    console.log('btn works')
+    getLockingSteps().then(data => console.log(data))
+    getHiphopSteps().then(data => console.log(data))
+    getPoppingSteps().then(data => console.log(data))
+})
 
 getPersons.addEventListener('click', () => {
     console.log('Person button works')
