@@ -10,3 +10,20 @@ body {
     background: #121212;
     color: #e5e5dc;
 }
+
+h1 {
+    text-align: center;
+}
+
+button {
+    padding: 6px 12px;
+    outline: none;
+    background: chocolate;
+    color: cornsilk;
+    margin: 1rem 3rem;
+}
+.buttons {
+    display: flex;
+    flex-flow: row wrap;
+
+}
