@@ -1,5 +1,19 @@
+// Practicing different ways to fetch api
+// trying out different free api:s out there, just wanna get better
+// doing this in vanilla js now, and next up is to practice more in react
+
 const danceSteps = document.querySelector('.getDanceSteps')
 const getPersons = document.querySelector('.randomBtn')
+
+// run function to see console log
+
+// create function to get data
+const getRandomUser = async () => {
+    const res = await fetch('https:/randomuser.me/api?results=20')
+    const data = await res.json()
+    console.log(data)
+}
+getRandomUser()
 
 
 
@@ -27,6 +41,7 @@ const getHiphopSteps = async () => {
     return data 
 }
 
+
 // need to the promise and resolve the data
 
 
@@ -45,23 +60,6 @@ getPersons.addEventListener('click', () => {
     console.log('Person button works')
 })
 
-/* 
-const getRandomUser = () => {
-fetch('https://randomuser.me/api/')
-    .then(res => res.json())
-    .then((data) => {
-        data.result
-        console.log(data)
-})
-} */
-
-
-/* const randomTemp = () => {
-
-    const html = `
-    
-    `
-} */
 
 
 
