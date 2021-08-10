@@ -1,19 +1,45 @@
 // Practicing different ways to fetch api
 // trying out different free api:s out there, just wanna get better
 // doing this in vanilla js now, and next up is to practice more in react
-
+const randomUserResults = document.querySelector('.fetched-random-results')
 const danceSteps = document.querySelector('.getDanceSteps')
 const getPersons = document.querySelector('.randomBtn')
+
+const userList = []
 
 // run function to see console log
 
 // create function to get data
 const getRandomUser = async () => {
     const res = await fetch('https:/randomuser.me/api?results=20')
-    const data = await res.json()
-    console.log(data)
+    //  const data = await res.json() destructure results
+    const { results } = await res.json()
+    console.log(results)
+    results.innerHTML = ''
+
+    results.forEach(user => {
+        const list = document.createElement('li')
+        list.classList.add('card')
+        userList.push(list)
+        
+        // and here we will use the ternary operator to create the cards for the list of users
+        list.innerHTML = `
+        <div class="container">
+        <img src="${user.picture.medium}" alt="${user.name.first}" class="cardImg">
+        <h3 class="title"><b>${user.name.first} ${user.name.last}</b></h3>
+        <div class="info">
+        <p class="email">${user.email}</p>
+        <span>Age:${user.dob.age} Gender:${user.gender}</span>
+        <p>Sweden, Stockholm </p>
+            
+        </div>
+    </div>
+        `
+
+        randomUserResults.appendChild(list)
+    })
 }
-getRandomUser()
+getPersons.addEventListener('click', getRandomUser)
 
 
 
@@ -56,9 +82,6 @@ danceSteps.addEventListener('click', () => {
     .catch(err => console.log("error", err))
 })
 
-getPersons.addEventListener('click', () => {
-    console.log('Person button works')
-})
 
 
 
