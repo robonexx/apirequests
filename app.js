@@ -2,8 +2,8 @@
 // trying out different free api:s out there, just wanna get better
 // doing this in vanilla js now, and next up is to practice more in react
 const randomUserResults = document.querySelector('.fetched-random-results')
-const danceSteps = document.querySelector('.getDanceSteps')
-const getPersons = document.querySelector('.randomBtn')
+const danceSteps = document.querySelector('.getDanceStepsBtn')
+const getPersons = document.querySelector('.getRandomUsersBtn')
 
 const userList = []
 
