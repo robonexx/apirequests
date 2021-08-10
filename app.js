@@ -15,7 +15,8 @@ const getRandomUser = async () => {
     //  const data = await res.json() destructure results
     const { results } = await res.json()
     console.log(results)
-    results.innerHTML = ''
+    // clear the innerHTMl of the random user div
+    randomUserResults.innerHTML = ''
 
     results.forEach(user => {
         const list = document.createElement('li')
